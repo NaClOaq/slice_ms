@@ -15,8 +15,8 @@
   "content_scripts": [
     {
       "matches": [
-      "http://*.jp/*",
-      "http://*.jp/*"
+      "http://*/*",
+      "https://*/*"
       ],
 
       "js": ["jquery-2.1.4.min.js", "mspath.js"],

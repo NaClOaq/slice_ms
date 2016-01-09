@@ -5,7 +5,7 @@
     elm.val(text.replace(/^.*?\/ms\//,'/ms/'));
   }
 
-  $("#srchtxt").focusout(function(){
+  $("input").focusout(function(){
     var self = $(this);
     chrome.extension.sendRequest({"action": "getIco"}, function(response) {
       if(response == 'on.png'){
