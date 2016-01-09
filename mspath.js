@@ -1,7 +1,17 @@
-$(function(){
-//window.alert("hoge");
-// if(localStorage['icon'] == 'on.png'){
-// ページ内を加工
-	$("body").html().replace( /ー/g, "━━━(ﾟ∀ﾟ)━━━" );
-// }
-});
+(function(){
+
+  function replacePath(elm){
+    var text = elm.val();
+    elm.val(text.replace(/^.*?\/ms\//,'/ms/'));
+  }
+
+  $("#srchtxt").focusout(function(){
+    var self = $(this);
+    chrome.extension.sendRequest({"action": "getIco"}, function(response) {
+      if(response == 'on.png'){
+        replacePath(self);
+      }
+    });
+  });
+
+})()

@@ -1,25 +1,40 @@
 {
   "name": "slice MS",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "manifest_version": 2,
-  "description": "auto slice ms path",
-  "browser_action": {
-    "default_icon": "on.png",
-    "default_title": "meta Check"
-  },
+  "description": "auto slice /ms/...",
+
+
   "background": {
     "scripts": [
     "background.js"
     ]
   },
+
+
+  "content_scripts": [
+    {
+      "matches": [
+      "http://*.jp/*",
+      "http://*.jp/*"
+      ],
+
+      "js": ["jquery-2.1.4.min.js", "mspath.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+
+  "browser_action": {
+    "default_icon": "on.png",
+    "default_title": "auto slice /ms/..."
+  },
+
+
   "permissions": [
   "activeTab"
-  ],
-  "content_scripts": [
-  {
-    "matches": ["http://*.jp/*"],
-    "js": ["jquery-2.1.4.min.js", "mspath.js"],
-    "run_at": "document_idle"
-  }
   ]
+
+
+
 }
