@@ -17,8 +17,6 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   chrome.browserAction.setIcon({path:localStorage['icon']});
 });
 
-
-
 chrome.extension.onRequest.addListener(
    function(request, sender, sendResponse) {
       switch(request.action) {
@@ -36,15 +34,5 @@ function getItem(key) { return getStorage().getItem(key); }
 function setItem(key, map) { return getStorage().setItem(key, map); }
 function removeItem(key) { return getStorage().removeItem(key); }
 function getStorage() { return window.localStorage; }
-
-
-
-
-
-
-
-
-
-
 
 })()
