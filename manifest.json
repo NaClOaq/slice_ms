@@ -1,40 +1,11 @@
 {
-  "name": "slice ms",
-  "version": "0.0.3",
-  "manifest_version": 2,
-  "description": "auto slice /ms/...",
-
-
-  "background": {
-    "scripts": [
-    "background.js"
-    ]
-  },
-
-
-  "content_scripts": [
-    {
-      "matches": [
-      "http://*/*",
-      "https://*/*"
-      ],
-
-      "js": ["jquery-2.1.4.min.js", "mspath.js"],
-      "run_at": "document_idle"
-    }
-  ],
-
-
-  "browser_action": {
-    "default_icon": "on.png",
-    "default_title": "auto slice /ms/..."
-  },
-
-
-  "permissions": [
-  "activeTab"
-  ]
-
-
-
+    "name": "Replace Copy",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "URLを置換してコピー",
+    "permissions": ["clipboardRead", "contextMenus", "tabs", "http://*/*", "https://*/*"],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "options_page": "options.html"
 }
